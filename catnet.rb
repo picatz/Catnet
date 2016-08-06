@@ -341,7 +341,7 @@ class Catnet
 
   # process names policy
   def process_names_policy
-    if @policy && @policy['names'][@name]
+    if @policy and @policy['names'][@name]
       if @policy['names'][@name]['replace']
         name = @policy['names'][@name]['replace']        
       else
@@ -373,7 +373,7 @@ class Catnet
 
   # process local_ips policy
   def process_local_ips
-    if @policy && @policy['local_ips'][@local_ip]
+    if @policy and @policy['local_ips'][@local_ip]
       if @policy['local_ips'][@local_ip]['replace']
         local_ip = @policy['local_ips'][@local_ip]['replace']        
       else
@@ -405,7 +405,7 @@ class Catnet
 
   # process local_ports policy
   def process_local_ports
-    if @policy && @policy['local_ports'][@local_port]
+    if @policy and @policy['local_ports'][@local_port]
       if @policy['local_ports'][@local_port]['replace']
         local_port = @policy['local_ports'][@local_port]['replace']        
       else
@@ -415,7 +415,7 @@ class Catnet
       if @options[:notify]
         if @policy['local_ports'][@local_port]['notify']
           if @policy['local_ports'][@local_port]['notify']['message']
-            Notify.notify('CATNECTION', @policy['local_ports'][local_port]['notify']['message'])
+            Notify.notify('CATNECTION', @policy['local_ports'][@local_port]['notify']['message'])
           end
         end
       end
@@ -423,11 +423,11 @@ class Catnet
       if @policy['local_ports'][@local_port]['type']
         type = @policy['local_ports'][@local_port]['type']
         if type.downcase.chr == 'g' # if good
-          local_port = local_port.green
+          local_port = local_port.to_s.green
         elsif type.downcase.chr == 'w' # if warn
-          local_port = local_port.yellow
+          local_port = local_port.to_s.yellow
         elsif type.downcase.chr == 'b' # if bad
-          local_port = local_port.red
+          local_port = local_port.to_s.red
         end
       end
 
@@ -437,7 +437,7 @@ class Catnet
 
   # process remote_ips policy
   def process_remote_ips
-    if @policy && @policy['remote_ips'][@remote_ip]
+    if @policy and @policy['remote_ips'][@remote_ip]
       if @policy['remote_ips'][@remote_ip]['replace']
         remote_ip = @policy['remote_ips'][@remote_ip]['replace']        
       else
@@ -469,7 +469,7 @@ class Catnet
   
   # process remote_ports policy
   def process_remote_ports
-    if @policy && @policy['remote_ports'][@remote_port]
+    if @policy and @policy['remote_ports'][@remote_port]
       if @policy['remote_ports'][@remote_port]['replace']
         remote_port = @policy['remote_ports'][@remote_port]['replace']        
       else
@@ -502,7 +502,7 @@ class Catnet
 
   # process pids policy
   def process_pids
-    if @policy && @policy['pids'][@pid]
+    if @policy and @policy['pids'][@pid]
       if @policy['pids'][@pid]['replace']
         pid = @policy['pids'][@pid]['replace']        
       else
@@ -534,7 +534,7 @@ class Catnet
 
   # process connection_states policy
   def process_connection_states
-    if @policy && @policy['connection_states'][@connection_state]
+    if @policy and @policy['connection_states'][@connection_state]
       if @policy['connection_states'][@connection_state]['replace']
         connection_state = @policy['connection_states'][@connection_state]['replace']        
       else
