@@ -487,11 +487,11 @@ class Catnet
       if @policy['remote_ports'][@remote_port]['type']
         type = @policy['remote_ports'][@remote_port]['type']
         if type.downcase.chr == 'g' # if good
-          remote_port = remote_port.green
+          remote_port = remote_port.to_s.green
         elsif type.downcase.chr == 'w' # if warn
-          remote_port = remote_port.yellow
+          remote_port = remote_port.to_s.yellow
         elsif type.downcase.chr == 'b' # if bad
-          remote_port = remote_port.red
+          remote_port = remote_port.to_s.red
         end
       end
 
