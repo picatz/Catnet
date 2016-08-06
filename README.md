@@ -52,7 +52,7 @@ Start catnet in monitor mode using a custom policy which will notify users if po
 
 ---
 
-#### Contributed By
+#### Credits
 
 [Kent 'picat' Gruber](https://github.com/picatz)
 
