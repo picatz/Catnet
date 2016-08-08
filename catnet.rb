@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# Kent 'picat' Gruber
 #____________________________________________________
 #               |                                    |
 #  C A T N E T  |                 /\       policy_/\ |
@@ -17,7 +16,7 @@
 # policies for interacting or responding to information.
 # Very effective for understanding tcp/udp IPv4 communications
 # for linux distributions. Software is as-is and I am 
-# not responsible for any damge caused using it in any form.
+# not responsible for any damage caused using it in any form.
 #
 # Use at your own risk, and be safe!
 #
@@ -43,7 +42,6 @@ def cls
 end
 
 options = {}
-options[:verbose] = false
 options[:listen] = false
 options[:start] = false
 options[:monitor] = false
@@ -86,9 +84,6 @@ optparse = OptionParser.new do |opts|
   end
   opts.on('-D', '--debug', 'Enter a debug mode with pry.') do
     options[:debug] = true
-  end
-  opts.on('-v', '--verbose', 'verbose output') do
-    options[:verbose] = true
   end
   opts.on('-l', '--listen', 'only show ports which are listening') do
     options[:listen] = true
