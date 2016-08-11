@@ -25,7 +25,6 @@ Usage: catnet [options]
     -C, --config <FILE.yaml>         define a custom config to use
     -L, --[no-]log                   Choose to use logging ( off default ).
     -D, --debug                      Enter a debug mode with pry.
-    -v, --verbose                    verbose output
     -l, --listen                     only show ports which are listening
     -r, --rainbow                    rainbow support, because we need it.
 ```
